@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="http://schemas.android.com/tools">
+    <attr format="color" name="backgroundColor"/>
+    <attr format="dimension" name="buttonTextSize"/>
+    <attr format="boolean" name="fitStatusBar"/>
+    <attr format="reference" name="leftDrawable"/>
+    <attr format="string" name="leftText"/>
+    <attr format="color" name="leftTextColor"/>
+    <attr format="color" name="lineColor"/>
+    <attr format="reference" name="rightDrawable"/>
+    <attr format="string" name="rightText"/>
+    <attr format="color" name="rightTextColor"/>
+    <attr format="boolean" name="showLeftImage"/>
+    <attr format="boolean" name="showLeftText"/>
+    <attr format="boolean" name="showLine"/>
+    <attr format="boolean" name="showRightImage"/>
+    <attr format="boolean" name="showRightText"/>
+    <attr format="string" name="titleText"/>
+    <attr format="color" name="titleTextColor"/>
+    <attr format="dimension" name="titleTextSize"/>
+    <color name="baseColorAccent">#FF4081</color>
+    <color name="baseColorPrimary">#3F51B5</color>
+    <color name="baseColorPrimaryDark">#303F9F</color>
+    <color name="black">#000000</color>
+    <color name="dark_status">#3D3D3D</color>
+    <color name="default_on_pressed">#33aaaaaa</color>
+    <color name="default_on_pressed_no_alpha">#ededed</color>
+    <color name="line_color">#dadada</color>
+    <color name="title_bottom_line_color">@color/line_color</color>
+    <color name="title_text_color">@color/black</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="waiting_dialog_bg_color">#7f000000</color>
+    <color name="waiting_dialog_message_color">#dadada</color>
+    <color name="white">#ffffff</color>
+    <declare-styleable name="AlphaTabView"><attr format="reference" name="tabIconNormal"/><attr format="reference" name="tabIconSelected"/><attr format="string" name="tabText"/><attr format="dimension" name="tabTextSize"/><attr format="dimension" name="textPadding"/><attr format="color" name="textColorNormal"/><attr format="color" name="textColorSelected"/><attr format="color" name="badgeBackgroundColor"/></declare-styleable>
+    <declare-styleable name="AlphaTabsIndicator"><attr format="integer" name="no_tab_count"/></declare-styleable>
+    <declare-styleable name="EmptyView"><attr format="reference" name="empty_layout"/><attr format="reference" name="image_view_id"/><attr format="reference" name="text_view_id"/><attr format="reference" name="empty_drawable"/><attr format="string" name="empty_text"/></declare-styleable>
+    <declare-styleable name="MaxWrapFrameLayout"><attr format="dimension" name="max_size"/></declare-styleable>
+    <declare-styleable name="SearchWidget"><attr name="android:hint"/><attr name="android:imeOptions"/><attr name="android:text"/><attr name="android:inputType"/></declare-styleable>
+    <declare-styleable name="TitleBar"><attr name="showLeftImage"/><attr name="showRightImage"/><attr name="showLeftText"/><attr name="showRightText"/><attr name="titleText"/><attr name="leftDrawable"/><attr name="rightDrawable"/><attr name="leftText"/><attr name="rightText"/><attr format="reference" name="imageBg"/><attr format="reference" name="textBg"/><attr name="showLine"/><attr name="lineColor"/><attr name="titleTextColor"/><attr name="titleTextSize"/><attr name="leftTextColor"/><attr name="rightTextColor"/><attr name="buttonTextSize"/><attr name="fitStatusBar"/><attr format="reference" name="bottom_layout"/><attr format="boolean" name="boldTitleText"/></declare-styleable>
+    <declare-styleable name="TopFrameLayout"><attr name="fitStatusBar"/></declare-styleable>
+    <declare-styleable name="TopLinearLayout"><attr name="fitStatusBar"/></declare-styleable>
+    <declare-styleable name="TopRelativeLayout"><attr name="fitStatusBar"/></declare-styleable>
+    <dimen name="alpha_tab_text_padding">4dp</dimen>
+    <dimen name="title_button_text_size">15dp</dimen>
+    <dimen name="title_text_size">18dp</dimen>
+    <dimen name="waiting_dialog_bg_radius">16dp</dimen>
+    <dimen name="waiting_dialog_message_margin">12dp</dimen>
+    <dimen name="waiting_dialog_message_size">16dp</dimen>
+    <dimen name="waiting_dialog_min_size">130dp</dimen>
+    <dimen name="waiting_dialog_pb_size">40dp</dimen>
+    <item name="clickable_bg" type="drawable">@drawable/selector_default_pressed</item>
+    <item name="clickable_bg_borderless" type="drawable">@drawable/selector_transparent
+    </item>
+    <item name="clickable_bg_item" type="drawable">@drawable/selector_default_pressed</item>
+    <item name="clickable_bg_white" type="drawable">@drawable/selector_default_white_pressed</item>
+    <item name="clickable_trans" type="drawable">@drawable/selector_transparent</item>
+    <item name="title_bar_button_bg" type="drawable">@drawable/clickable_bg_item</item>
+    <item name="title_bar_text_bg" type="drawable">@drawable/clickable_bg</item>
+    <string name="waiting_dialog_default_message">Loading...</string>
+    <style name="ButtonTextStyle" parent="TextAppearance.AppCompat.Widget.Button">
+        <item name="android:textAllCaps">false</item>
+    </style>
+    <style name="CommonDialogStyle" parent="Theme.AppCompat.Light.Dialog">
+        <!-- 背景透明 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <!-- 浮于Activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!-- Dialog以外的区域模糊效果 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 无标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 半透明 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!--让特定尺寸的对话框可以居中显示，并且设置的尺寸有效 todo 下面这句有问题，会导致padding失效，未知错乱等-->
+        <!--<item name="android:layout_gravity">center</item>-->
+    </style>
+    <style name="CommonTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/baseColorPrimary</item>
+        <item name="colorPrimaryDark">@color/baseColorPrimaryDark</item>
+        <item name="colorAccent">@color/baseColorAccent</item>
+        <item name="android:textAppearanceButton">@style/ButtonTextStyle</item>
+    </style>
+    <style name="ForDesignWithTranslucentStatus" parent="CommonTheme"/>
+    <style name="PopupStyle" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/pop_enter_anim</item>
+        <item name="android:windowExitAnimation">@anim/pop_exit_anim</item>
+    </style>
+    <style name="TranslucentStatus" parent="CommonTheme"/>
+    <style name="WaitingDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">#00000000</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.6</item>
+        <item name="android:windowContentOverlay">@null</item>
+
+    </style>
+    <style name="WaitingProgressBar" parent="Widget.AppCompat.ProgressBar">
+        <item name="android:indeterminateTint" ns1:targetApi="lollipop">#dadada</item>
+        <item name="android:indeterminateTintMode" ns1:targetApi="lollipop">src_atop</item>
+    </style>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="clickable_bg" type="drawable">@drawable/ripple_default</item>
+    <item name="clickable_bg_borderless" type="drawable">@drawable/ripple_default_borderless</item>
+    <item name="clickable_bg_item" type="drawable">@drawable/ripple_default_action_item</item>
+    <item name="clickable_bg_white" type="drawable">@drawable/ripple_default_white_selector</item>
+    <item name="clickable_trans" type="drawable">@drawable/ripple_default</item>
+    <style name="ForDesignWithTranslucentStatus" parent="CommonTheme">
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+    <style name="TranslucentStatus" parent="CommonTheme">
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:statusBarColor">#00FFFFFF</item>
+    </style>
+</resources>
