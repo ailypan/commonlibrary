@@ -1,15 +1,17 @@
 package cn.lp.commonlibrary.okgo.logger;
 
-import cn.lp.commonlibrary.okgo.utils.UnicodeUtil;
-import com.licheedev.myutils.LogPlus;
 import com.lzy.okgo.model.HttpHeaders;
 import com.lzy.okgo.model.HttpParams;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import cn.lp.commonlibrary.okgo.utils.UnicodeUtil;
+import cn.lp.commonlibrary.utils.LogPlus;
+
 /**
- * Created by John on 2018/2/5.
+ * Created by lp on 2018/2/5.
  */
 
 public class JsonRequestLogger implements RequestLogger {
@@ -74,7 +76,6 @@ public class JsonRequestLogger implements RequestLogger {
             }
         }
 
-        //LogPlus.i(TAG, sb.toString(), tr);
         LogPlus.i(TAG, sb.toString());
     }
 }

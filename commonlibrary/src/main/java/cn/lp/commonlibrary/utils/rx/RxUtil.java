@@ -1,6 +1,6 @@
 package cn.lp.commonlibrary.utils.rx;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
 import io.reactivex.ObservableTransformer;

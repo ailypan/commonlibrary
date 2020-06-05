@@ -1,7 +1,16 @@
 package cn.lp.commonlibrary.okgo;
 
 import android.app.Application;
-import android.support.annotation.Nullable;
+
+import com.lzy.okgo.OkGo;
+import com.lzy.okgo.exception.HttpException;
+import com.lzy.okgo.model.HttpHeaders;
+import com.lzy.okgo.model.HttpMethod;
+import com.lzy.okgo.model.HttpParams;
+
+import java.io.IOException;
+
+import androidx.annotation.Nullable;
 import cn.lp.commonlibrary.okgo.callback.MyCallback;
 import cn.lp.commonlibrary.okgo.converter.Bean01Convert;
 import cn.lp.commonlibrary.okgo.converter.Convert2;
@@ -9,11 +18,6 @@ import cn.lp.commonlibrary.okgo.converter.MyConverter;
 import cn.lp.commonlibrary.okgo.interceptor.ErrorInterceptor;
 import cn.lp.commonlibrary.okgo.logger.RequestLogger;
 import cn.lp.commonlibrary.okgo.translator.ErrorTranslator;
-import com.lzy.okgo.OkGo;
-import com.lzy.okgo.exception.HttpException;
-import com.lzy.okgo.model.HttpHeaders;
-import com.lzy.okgo.model.HttpMethod;
-import com.lzy.okgo.model.HttpParams;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
@@ -21,7 +25,6 @@ import io.reactivex.ObservableSource;
 import io.reactivex.ObservableTransformer;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.functions.Function;
-import java.io.IOException;
 import okhttp3.OkHttpClient;
 import okhttp3.Response;
 
@@ -193,7 +196,7 @@ public class OkGoWrapper {
      * @param <T> 响应实体类型
      */
     public <T> void post(String url, @Nullable HttpHeaders headers, @Nullable HttpParams params,
-        Class<T> clazz, MyCallback<T> callback, @Nullable Object tag) {
+                         Class<T> clazz, MyCallback<T> callback, @Nullable Object tag) {
         asyncRequest(HttpMethod.POST, url, headers, params, clazz, callback, tag);
     }
 
@@ -325,7 +328,7 @@ public class OkGoWrapper {
      */
     public <T> Observable<T> rxRequest(final HttpMethod httpMethod, final String url,
         @Nullable final HttpHeaders headers, @Nullable final HttpParams params,
-        @android.support.annotation.NonNull final MyConverter<T> converter,
+        @androidx.annotation.NonNull final MyConverter<T> converter,
         @Nullable final Object tag) {
 
         return Observable.create(new ObservableOnSubscribe<T>() {
@@ -385,7 +388,7 @@ public class OkGoWrapper {
      */
     public <T> Observable<T> rxRequest(final HttpMethod httpMethod, final String url,
         @Nullable final HttpParams params,
-        @android.support.annotation.NonNull final MyConverter<T> converter, @Nullable Object tag) {
+        @androidx.annotation.NonNull final MyConverter<T> converter, @Nullable Object tag) {
 
         return rxRequest(httpMethod, url, null, params, converter, tag);
     }
@@ -431,7 +434,7 @@ public class OkGoWrapper {
      * @return
      */
     public <T> Observable<T> rxPost(String url, @Nullable HttpHeaders headers,
-        @Nullable HttpParams params, @android.support.annotation.NonNull MyConverter<T> converter,
+        @Nullable HttpParams params, @androidx.annotation.NonNull MyConverter<T> converter,
         @Nullable Object tag) {
         return rxRequest(HttpMethod.POST, url, headers, params, converter, tag);
     }
@@ -447,7 +450,7 @@ public class OkGoWrapper {
      * @return
      */
     public <T> Observable<T> rxPost(String url, @Nullable HttpHeaders headers,
-        @Nullable HttpParams params, @android.support.annotation.NonNull MyConverter<T> converter) {
+        @Nullable HttpParams params, @androidx.annotation.NonNull MyConverter<T> converter) {
         return rxPost(url, headers, params, converter, null);
     }
 
@@ -461,7 +464,7 @@ public class OkGoWrapper {
      * @return
      */
     public <T> Observable<T> rxPost(String url, @Nullable HttpParams params,
-        @android.support.annotation.NonNull MyConverter<T> converter) {
+        @androidx.annotation.NonNull MyConverter<T> converter) {
         return rxPost(url, null, params, converter, null);
     }
 
@@ -507,7 +510,7 @@ public class OkGoWrapper {
      * @return
      */
     public <T> Observable<T> rxGet(String url, @Nullable HttpHeaders headers,
-        @Nullable HttpParams params, @android.support.annotation.NonNull MyConverter<T> converter,
+        @Nullable HttpParams params, @androidx.annotation.NonNull MyConverter<T> converter,
         @Nullable Object tag) {
         return rxRequest(HttpMethod.GET, url, headers, params, converter, tag);
     }
@@ -523,7 +526,7 @@ public class OkGoWrapper {
      * @return
      */
     public <T> Observable<T> rxGet(String url, @Nullable HttpHeaders headers,
-        @Nullable HttpParams params, @android.support.annotation.NonNull MyConverter<T> converter) {
+        @Nullable HttpParams params, @androidx.annotation.NonNull MyConverter<T> converter) {
         return rxGet(url, headers, params, converter, null);
     }
 
@@ -537,7 +540,7 @@ public class OkGoWrapper {
      * @return
      */
     public <T> Observable<T> rxGet(String url, @Nullable HttpParams params,
-        @android.support.annotation.NonNull MyConverter<T> converter) {
+        @androidx.annotation.NonNull MyConverter<T> converter) {
         return rxGet(url, params, converter);
     }
 

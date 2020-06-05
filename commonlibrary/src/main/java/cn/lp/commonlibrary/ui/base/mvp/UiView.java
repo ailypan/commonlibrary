@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.widget.Toast;
 
 /**
- * Created by John on 2017/8/28.
+ * Created by lp on 2017/8/28.
  */
 
 public interface UiView {

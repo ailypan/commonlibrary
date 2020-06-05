@@ -1,12 +1,13 @@
 package cn.lp.commonlibrary.utils.rv_tool;
 
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
+
 /**
- * Created by John on 2017/11/12.
+ * Created by lp on 2017/11/12.
  */
 
 public class EmptyRecyclerView extends RecyclerView.AdapterDataObserver {

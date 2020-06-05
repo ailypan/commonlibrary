@@ -4,7 +4,7 @@ import android.app.ActivityManager;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import com.licheedev.myutils.LogPlus;
+
 import java.util.Iterator;
 import java.util.List;
 

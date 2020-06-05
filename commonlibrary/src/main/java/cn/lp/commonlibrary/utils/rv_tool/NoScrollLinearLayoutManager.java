@@ -1,11 +1,12 @@
 package cn.lp.commonlibrary.utils.rv_tool;
 
 import android.content.Context;
-import android.support.v7.widget.LinearLayoutManager;
 import android.util.AttributeSet;
 
+import androidx.recyclerview.widget.LinearLayoutManager;
+
 /**
- * Created by John on 2017/10/25.
+ * Created by lp on 2017/10/25.
  */
 
 public class NoScrollLinearLayoutManager extends LinearLayoutManager {

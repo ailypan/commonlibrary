@@ -3,11 +3,13 @@ package cn.lp.commonlibrary.utils;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
-import android.support.v4.content.ContextCompat;
 import android.text.Html;
 import android.text.Spanned;
 import android.widget.TextView;
+
 import java.util.Locale;
+
+import androidx.core.content.ContextCompat;
 
 /**
  * Resources工具类

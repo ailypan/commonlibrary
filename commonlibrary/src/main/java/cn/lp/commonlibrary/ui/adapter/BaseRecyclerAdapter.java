@@ -2,18 +2,20 @@ package cn.lp.commonlibrary.ui.adapter;
 
 import android.content.Context;
 import android.content.res.Resources;
-import android.support.v7.widget.RecyclerView;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.recyclerview.widget.RecyclerView;
+
 /**
- * Created by John on 2017/5/25.
+ * Created by lp on 2017/5/25.
  */
 
 public abstract class BaseRecyclerAdapter<T>
@@ -21,8 +23,6 @@ public abstract class BaseRecyclerAdapter<T>
 
     private OnItemClickListener mOnItemClickListener;
     private OnItemLongClickListener mOnItemLongClickListener;
-
-    
 
     public interface OnItemClickListener {
         void onItemClick(ViewGroup parent, CommonHolder holder, int position);

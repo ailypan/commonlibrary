@@ -5,18 +5,20 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.LayoutRes;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+
+import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
+
+import androidx.annotation.LayoutRes;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import cn.lp.commonlibrary.R;
 import cn.lp.commonlibrary.ui.base.mvp.UiView;
 import cn.lp.commonlibrary.ui.dialog.WaitingDialog;
 import cn.lp.commonlibrary.utils.ToastUtil;
-import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 
 /**
  * 基础Activity，建议继承此类再写一个BaseActivity

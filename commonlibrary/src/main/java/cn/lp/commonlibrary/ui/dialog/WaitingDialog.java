@@ -2,15 +2,16 @@ package cn.lp.commonlibrary.ui.dialog;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.annotation.StringRes;
 import android.util.DisplayMetrics;
 import android.view.WindowManager;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.StringRes;
 import cn.lp.commonlibrary.R;
 
 /**
- * Created by John on 2017/6/13.
+ * Created by lp on 2017/6/13.
  */
 
 public class WaitingDialog extends Dialog {
@@ -21,10 +22,7 @@ public class WaitingDialog extends Dialog {
         super(context, R.style.WaitingDialog);
 
         setContentView(R.layout.dialog_waiting);
-
-        //int size = (int) (getScreenWidth(context) * 0.33);
-        //getWindow().setLayout(size, size);
-        mTvMessage = (TextView) findViewById(R.id.tv_message);
+        mTvMessage = findViewById(R.id.tv_message);
     }
 
     public static WaitingDialog newDialog(Context context) {

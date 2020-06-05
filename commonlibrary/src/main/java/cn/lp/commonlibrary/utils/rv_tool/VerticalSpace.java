@@ -2,12 +2,13 @@ package cn.lp.commonlibrary.utils.rv_tool;
 
 import android.content.res.Resources;
 import android.graphics.Rect;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * 垂直方向的空白
- * Created by John on 2017/7/11.
+ * Created by lp on 2017/7/11.
  */
 public class VerticalSpace extends RecyclerView.ItemDecoration {
 

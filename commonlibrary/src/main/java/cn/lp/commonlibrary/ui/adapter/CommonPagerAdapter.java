@@ -1,14 +1,11 @@
 package cn.lp.commonlibrary.ui.adapter;
 
-/*
- *  viewpager普通公用adapter.Yz
- */
-
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import java.util.Arrays;
 import java.util.List;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
 
 public class CommonPagerAdapter extends FragmentPagerAdapter {
     

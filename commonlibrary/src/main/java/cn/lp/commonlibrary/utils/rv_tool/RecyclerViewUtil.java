@@ -1,14 +1,15 @@
 package cn.lp.commonlibrary.utils.rv_tool;
 
 import android.graphics.drawable.Drawable;
-import android.support.v4.view.ViewCompat;
-import android.support.v7.widget.DividerItemDecoration;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+
+import androidx.core.view.ViewCompat;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import cn.lp.commonlibrary.R;
 
 /**
- * Created by John on 2017/7/19.
+ * Created by lp on 2017/7/19.
  */
 
 public class RecyclerViewUtil {

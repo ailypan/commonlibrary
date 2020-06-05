@@ -1,14 +1,15 @@
 package cn.lp.commonlibrary.okgo.callback;
 
-import android.support.annotation.NonNull;
+import com.lzy.okgo.callback.AbsCallback;
+import com.lzy.okgo.model.Response;
+import com.lzy.okgo.request.base.Request;
+
+import androidx.annotation.NonNull;
 import cn.lp.commonlibrary.okgo.OkGoWrapper;
 import cn.lp.commonlibrary.okgo.converter.Convert2;
 import cn.lp.commonlibrary.okgo.interceptor.ErrorInterceptor;
 import cn.lp.commonlibrary.okgo.logger.RequestLogger;
 import cn.lp.commonlibrary.okgo.translator.ErrorTranslator;
-import com.lzy.okgo.callback.AbsCallback;
-import com.lzy.okgo.model.Response;
-import com.lzy.okgo.request.base.Request;
 
 /**
  * 二次封装的OkGo回调

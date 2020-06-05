@@ -5,7 +5,7 @@ import com.lzy.okgo.model.HttpParams;
 
 /**
  * 请求日志打印
- * Created by John on 2018/2/1.
+ * Created by lp on 2018/2/1.
  */
 
 public interface RequestLogger {

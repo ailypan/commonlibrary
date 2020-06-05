@@ -1,12 +1,13 @@
 package cn.lp.commonlibrary.okgo.logger;
 
-import cn.lp.commonlibrary.okgo.utils.UnicodeUtil;
-import com.licheedev.myutils.LogPlus;
 import com.lzy.okgo.model.HttpHeaders;
 import com.lzy.okgo.model.HttpParams;
 
+import cn.lp.commonlibrary.okgo.utils.UnicodeUtil;
+import cn.lp.commonlibrary.utils.LogPlus;
+
 /**
- * Created by John on 2018/2/1.
+ * Created by lp on 2018/2/1.
  */
 
 public class DefaultRequestLogger implements RequestLogger {
@@ -38,8 +39,6 @@ public class DefaultRequestLogger implements RequestLogger {
         if (response != null) {
             sb.append("\n【HTTP】response==>").append(UnicodeUtil.decode(response));
         }
-
-        //LogPlus.i(TAG, sb.toString(), tr);
         LogPlus.i(TAG, sb.toString());
     }
 }

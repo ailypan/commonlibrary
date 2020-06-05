@@ -1,6 +1,6 @@
 package cn.lp.commonlibrary.utils.rv_tool;
 
-import android.support.v7.widget.GridLayoutManager;
+import androidx.recyclerview.widget.GridLayoutManager;
 
 class SpanLookupFactory {
 

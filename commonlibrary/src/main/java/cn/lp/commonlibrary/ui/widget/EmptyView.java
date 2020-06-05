@@ -3,19 +3,20 @@ package cn.lp.commonlibrary.ui.widget;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.AttrRes;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.annotation.AttrRes;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import cn.lp.commonlibrary.R;
 
 /**
- * Created by John on 2017/11/12.
+ * Created by lp on 2017/11/12.
  */
 
 public class EmptyView extends FrameLayout {

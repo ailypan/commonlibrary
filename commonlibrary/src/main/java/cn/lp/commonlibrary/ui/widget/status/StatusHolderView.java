@@ -4,12 +4,13 @@ import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.Resources;
 import android.os.Build;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
+import androidx.annotation.Nullable;
+
 /**
- * Created by John on 2017/12/12.
+ * Created by lp on 2017/12/12.
  */
 
 public class StatusHolderView extends View {

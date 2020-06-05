@@ -1,15 +1,17 @@
 package cn.lp.commonlibrary.utils;
 
 import android.app.Dialog;
-import android.support.annotation.IntDef;
-import android.support.annotation.LayoutRes;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
+
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
+
+import androidx.annotation.IntDef;
+import androidx.annotation.LayoutRes;
 
 /**
  * 对话框工具类，可以修复自定义对话框，布局参数无效的问题
@@ -25,7 +27,6 @@ public class DialogUtil {
      */
     public static void adjustDialogLayout(Dialog dialog, boolean matchParentWidth,
         boolean matchParentHeight) {
-
         Window window = dialog.getWindow();
 
         // 必须调用此方法让DecorView初始化，否则下面的设置布局参数无效

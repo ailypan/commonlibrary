@@ -4,14 +4,16 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.trello.rxlifecycle2.components.support.RxFragment;
+
+import androidx.annotation.Nullable;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import cn.lp.commonlibrary.ui.base.mvp.UiView;
-import com.trello.rxlifecycle2.components.support.RxFragment;
 
 /**
  * 基础Fragment，建议继承此类再写一个BaseFragment

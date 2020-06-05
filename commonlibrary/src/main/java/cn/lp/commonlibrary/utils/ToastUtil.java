@@ -3,6 +3,7 @@ package cn.lp.commonlibrary.utils;
 import android.content.Context;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import java.lang.ref.WeakReference;
 
 /**

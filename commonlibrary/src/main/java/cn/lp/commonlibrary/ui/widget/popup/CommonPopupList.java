@@ -12,10 +12,12 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.PopupWindow;
-import cn.lp.commonlibrary.R;
-import cn.lp.commonlibrary.ui.adapter.BaseListAdapter;
+
 import java.util.Arrays;
 import java.util.List;
+
+import cn.lp.commonlibrary.R;
+import cn.lp.commonlibrary.ui.adapter.BaseListAdapter;
 
 /**
  * 通用的

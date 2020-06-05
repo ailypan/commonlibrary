@@ -1,8 +1,10 @@
 package cn.lp.commonlibrary.utils;
 
 import android.os.CountDownTimer;
-import android.support.annotation.NonNull;
+
 import java.util.concurrent.TimeUnit;
+
+import androidx.annotation.NonNull;
 
 /**
  * Created by lp on 2018/3/10.

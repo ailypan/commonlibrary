@@ -1,11 +1,12 @@
 package cn.lp.commonlibrary.okgo.translator;
 
 import com.google.gson.JsonParseException;
-import cn.lp.commonlibrary.okgo.exception.ApiException;
 import com.lzy.okgo.exception.HttpException;
 
+import cn.lp.commonlibrary.okgo.exception.ApiException;
+
 /**
- * Created by John on 2018/2/2.
+ * Created by lp on 2018/2/2.
  */
 
 public class DefaultErrorTranslator implements ErrorTranslator {

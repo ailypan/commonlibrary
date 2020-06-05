@@ -1,11 +1,12 @@
 package cn.lp.commonlibrary.okgo.sample_api;
 
+import com.lzy.okgo.model.HttpParams;
+import com.trello.rxlifecycle2.android.ActivityEvent;
+
 import cn.lp.commonlibrary.okgo.OkGoWrapper;
 import cn.lp.commonlibrary.okgo.callback.Bean01Callback;
 import cn.lp.commonlibrary.okgo.rx.OkObserver;
 import cn.lp.commonlibrary.ui.base.BaseCommonActivity;
-import com.lzy.okgo.model.HttpParams;
-import com.trello.rxlifecycle2.android.ActivityEvent;
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
@@ -14,6 +15,7 @@ import io.reactivex.schedulers.Schedulers;
  * 用来复制粘贴做模板的类，用来参考的
  */
 public class SampleApi {
+
     private final OkGoWrapper mOkGoWrapper;
 
     private SampleApi() {

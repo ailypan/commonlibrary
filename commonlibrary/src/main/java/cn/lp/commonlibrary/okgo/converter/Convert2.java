@@ -6,13 +6,15 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.gson.stream.JsonReader;
-import cn.lp.commonlibrary.okgo.exception.ApiException;
+
 import java.io.StringReader;
+
+import cn.lp.commonlibrary.okgo.exception.ApiException;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
 
 /**
- * Created by John on 2018/2/3.
+ * Created by lp on 2018/2/3.
  */
 
 public class Convert2 {
