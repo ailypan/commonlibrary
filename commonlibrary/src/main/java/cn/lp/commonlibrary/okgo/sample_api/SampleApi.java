@@ -14,7 +14,6 @@ import io.reactivex.schedulers.Schedulers;
  * 用来复制粘贴做模板的类，用来参考的
  */
 public class SampleApi {
-
     private final OkGoWrapper mOkGoWrapper;
 
     private SampleApi() {
