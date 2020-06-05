@@ -33,7 +33,7 @@ public class EmptyView extends FrameLayout {
     }
 
     public EmptyView(@NonNull Context context, @Nullable AttributeSet attrs,
-        @AttrRes int defStyleAttr) {
+                     @AttrRes int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
         if (attrs != null) {

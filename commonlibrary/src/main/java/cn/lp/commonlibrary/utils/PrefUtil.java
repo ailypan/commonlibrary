@@ -20,7 +20,7 @@ public class PrefUtil {
      */
     public static void init(Context context) {
         sDefault = new PrefUtil(
-            PreferenceManager.getDefaultSharedPreferences(context.getApplicationContext()));
+                PreferenceManager.getDefaultSharedPreferences(context.getApplicationContext()));
     }
 
     /**

@@ -11,8 +11,7 @@ import androidx.viewpager.widget.ViewPager;
  * 不可以滑动，但是可以setCurrentItem的ViewPager。
  */
 public class NoScrollViewPager
-        extends ViewPager
-{
+        extends ViewPager {
     public NoScrollViewPager(Context context) {
         super(context);
     }

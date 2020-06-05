@@ -93,8 +93,8 @@ public abstract class BaseCommonActivity extends RxAppCompatActivity implements 
     protected void setTranslucentStatus() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().getDecorView()
-                .setSystemUiVisibility(
-                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
+                    .setSystemUiVisibility(
+                            View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
         }
     }
 
@@ -104,8 +104,8 @@ public abstract class BaseCommonActivity extends RxAppCompatActivity implements 
     protected void setDarkStatus() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             getWindow().getDecorView()
-                .setSystemUiVisibility(
-                    View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+                    .setSystemUiVisibility(
+                            View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().setStatusBarColor(getResources().getColor(R.color.dark_status));
         }
@@ -220,7 +220,7 @@ public abstract class BaseCommonActivity extends RxAppCompatActivity implements 
             //如果不是落在EditText区域，则需要关闭输入法
             if (HideKeyboard(v, ev)) {
                 InputMethodManager imm =
-                    (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                        (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(v.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
             }
         }
@@ -231,17 +231,17 @@ public abstract class BaseCommonActivity extends RxAppCompatActivity implements 
     private boolean HideKeyboard(View view, MotionEvent event) {
         if (view != null && (view instanceof EditText)) {
 
-            int[] location = { 0, 0 };
+            int[] location = {0, 0};
             view.getLocationInWindow(location);
 
             //获取现在拥有焦点的控件view的位置，即EditText
             int left = location[0], top = location[1], bottom = top + view.getHeight(), right =
-                left + view.getWidth();
+                    left + view.getWidth();
             //判断我们手指点击的区域是否落在EditText上面，如果不是，则返回true，否则返回false
             boolean isInEt = (event.getX() > left
-                && event.getX() < right
-                && event.getY() > top
-                && event.getY() < bottom);
+                    && event.getX() < right
+                    && event.getY() > top
+                    && event.getY() < bottom);
             return !isInEt;
         }
         return false;

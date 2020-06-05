@@ -53,7 +53,7 @@ public interface UiView {
     /**
      * 显示等待菊花对话框
      *
-     * @param text 对话框文本
+     * @param text       对话框文本
      * @param cancelable 是否可以点击外部取消对话框
      */
     void showWaitingDialog(String text, boolean cancelable);
@@ -61,7 +61,7 @@ public interface UiView {
     /**
      * 显示等待菊花对话框
      *
-     * @param stringRes 对话框文本
+     * @param stringRes  对话框文本
      * @param cancelable 是否可以点击外部取消对话框
      */
     void showWaitingDialog(int stringRes, boolean cancelable);

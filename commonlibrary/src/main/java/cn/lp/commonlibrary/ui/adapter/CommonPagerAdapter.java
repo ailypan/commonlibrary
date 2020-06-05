@@ -8,7 +8,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 public class CommonPagerAdapter extends FragmentPagerAdapter {
-    
+
     private List<Fragment> fragments;
 
     public CommonPagerAdapter(FragmentManager fm, List<Fragment> fragments) {

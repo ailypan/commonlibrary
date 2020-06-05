@@ -21,20 +21,20 @@ public class RecyclerViewUtil {
      * @param linearLayoutManager
      */
     public static void setDefaultDivider(RecyclerView recyclerView,
-        LinearLayoutManager linearLayoutManager) {
+                                         LinearLayoutManager linearLayoutManager) {
         setDivider(recyclerView, linearLayoutManager, R.drawable.shape_defalut_divider);
     }
 
     public static void setDivider(RecyclerView recyclerView,
-        LinearLayoutManager linearLayoutManager, Drawable dividerDrawable) {
+                                  LinearLayoutManager linearLayoutManager, Drawable dividerDrawable) {
         DividerItemDecoration decoration = new DividerItemDecoration(recyclerView.getContext(),
-            linearLayoutManager.getOrientation());
+                linearLayoutManager.getOrientation());
         decoration.setDrawable(dividerDrawable);
         recyclerView.addItemDecoration(decoration);
     }
 
     public static void setDivider(RecyclerView recyclerView,
-        LinearLayoutManager linearLayoutManager, int drawableResId) {
+                                  LinearLayoutManager linearLayoutManager, int drawableResId) {
         Drawable drawable = recyclerView.getResources().getDrawable(drawableResId);
         setDivider(recyclerView, linearLayoutManager, drawable);
     }

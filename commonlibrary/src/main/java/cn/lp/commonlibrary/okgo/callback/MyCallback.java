@@ -51,7 +51,7 @@ public abstract class MyCallback<T> extends AbsCallback<T> {
 
         if (mClazz == null) {
             throw new NullPointerException(
-                "mClazz为null，必须调用 cn.dlc.commonlibrary.okgo.callback.MyCallback.setClass()");
+                    "mClazz为null，必须调用 cn.dlc.commonlibrary.okgo.callback.MyCallback.setClass()");
         }
 
         T t = convert(mJson);
@@ -59,7 +59,7 @@ public abstract class MyCallback<T> extends AbsCallback<T> {
         RequestLogger requestLogger = mOkGoWrapper.getRequestLogger();
         if (requestLogger != null) {
             requestLogger.logRequest(mRequest.getUrl(), mRequest.getHeaders(), mRequest.getParams(),
-                mJson, null);
+                    mJson, null);
         }
         return t;
     }
@@ -71,7 +71,7 @@ public abstract class MyCallback<T> extends AbsCallback<T> {
         RequestLogger requestLogger = mOkGoWrapper.getRequestLogger();
         if (requestLogger != null) {
             requestLogger.logRequest(mRequest.getUrl(), mRequest.getHeaders(), mRequest.getParams(),
-                mJson, exception);
+                    mJson, exception);
         }
 
         ErrorInterceptor errorInterceptor = mOkGoWrapper.getErrorInterceptor();
@@ -115,7 +115,7 @@ public abstract class MyCallback<T> extends AbsCallback<T> {
      * 失败回调
      *
      * @param message 异常信息
-     * @param tr 异常
+     * @param tr      异常
      */
     public abstract void onFailure(String message, Throwable tr);
 }

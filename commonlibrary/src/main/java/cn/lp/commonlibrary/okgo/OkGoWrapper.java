@@ -58,7 +58,7 @@ public class OkGoWrapper {
             OkGo.getInstance().getContext();
         } catch (Exception e) {
             throw new IllegalStateException(
-                "OkGo未初始化，必须先调用cn.dlc.commonlibrary.okgo.OkGoWrapper.initOkGo()");
+                    "OkGo未初始化，必须先调用cn.dlc.commonlibrary.okgo.OkGoWrapper.initOkGo()");
         }
     }
 
@@ -74,7 +74,7 @@ public class OkGoWrapper {
      * }
      * </pre>
      *
-     * @param app {@link Application}实例
+     * @param app          {@link Application}实例
      * @param okHttpClient {@link OkHttpClient}实例
      * @see OkHttpClient.Builder
      */
@@ -154,17 +154,17 @@ public class OkGoWrapper {
      * 进行异步请求
      *
      * @param httpMethod 请求方法，如GET、POST等，{@link HttpMethod}
-     * @param url 请求url
-     * @param headers 请求头
-     * @param params 请求参数
-     * @param clazz 响应实体类
-     * @param callback 请求回调
-     * @param tag 请求标签，默认为填进去的clazz参数，用以标识当前的请求，方便后续取消对应的请求，
-     * @param <T> 响应实体类型
+     * @param url        请求url
+     * @param headers    请求头
+     * @param params     请求参数
+     * @param clazz      响应实体类
+     * @param callback   请求回调
+     * @param tag        请求标签，默认为填进去的clazz参数，用以标识当前的请求，方便后续取消对应的请求，
+     * @param <T>        响应实体类型
      */
     public <T> void asyncRequest(HttpMethod httpMethod, final String url,
-        @Nullable final HttpHeaders headers, @Nullable final HttpParams params, Class<T> clazz,
-        MyCallback<T> callback, @Nullable Object tag) {
+                                 @Nullable final HttpHeaders headers, @Nullable final HttpParams params, Class<T> clazz,
+                                 MyCallback<T> callback, @Nullable Object tag) {
 
         checkOkGo();
 
@@ -187,13 +187,13 @@ public class OkGoWrapper {
     /**
      * POST请求
      *
-     * @param url 请求url
-     * @param headers 请求头
-     * @param params 请求参数
-     * @param clazz 响应实体类
+     * @param url      请求url
+     * @param headers  请求头
+     * @param params   请求参数
+     * @param clazz    响应实体类
      * @param callback 请求回调
-     * @param tag 请求标签，默认为填进去的clazz参数，用以标识当前的请求，方便后续取消对应的请求，
-     * @param <T> 响应实体类型
+     * @param tag      请求标签，默认为填进去的clazz参数，用以标识当前的请求，方便后续取消对应的请求，
+     * @param <T>      响应实体类型
      */
     public <T> void post(String url, @Nullable HttpHeaders headers, @Nullable HttpParams params,
                          Class<T> clazz, MyCallback<T> callback, @Nullable Object tag) {
@@ -203,74 +203,74 @@ public class OkGoWrapper {
     /**
      * POST请求
      *
-     * @param url 请求url
-     * @param headers 请求头
-     * @param params 请求参数
-     * @param clazz 响应实体类
+     * @param url      请求url
+     * @param headers  请求头
+     * @param params   请求参数
+     * @param clazz    响应实体类
      * @param callback 请求回调
-     * @param <T> 响应实体类型
+     * @param <T>      响应实体类型
      */
     public <T> void post(String url, @Nullable HttpHeaders headers, @Nullable HttpParams params,
-        Class<T> clazz, MyCallback<T> callback) {
+                         Class<T> clazz, MyCallback<T> callback) {
         post(url, headers, params, clazz, callback, null);
     }
 
     /**
      * POST请求
      *
-     * @param url 请求url
-     * @param params 请求参数
-     * @param clazz 响应实体类
+     * @param url      请求url
+     * @param params   请求参数
+     * @param clazz    响应实体类
      * @param callback 请求回调
-     * @param <T> 响应实体类型
+     * @param <T>      响应实体类型
      */
     public <T> void post(String url, @Nullable HttpParams params, Class<T> clazz,
-        MyCallback<T> callback) {
+                         MyCallback<T> callback) {
         post(url, null, params, clazz, callback);
     }
 
     /**
      * GET请求
      *
-     * @param url 请求url
-     * @param headers 请求头
-     * @param params 请求参数
-     * @param clazz 响应实体类
+     * @param url      请求url
+     * @param headers  请求头
+     * @param params   请求参数
+     * @param clazz    响应实体类
      * @param callback 请求回调
-     * @param tag 请求标签，默认为填进去的clazz参数，用以标识当前的请求，方便后续取消对应的请求，
-     * @param <T> 响应实体类型
+     * @param tag      请求标签，默认为填进去的clazz参数，用以标识当前的请求，方便后续取消对应的请求，
+     * @param <T>      响应实体类型
      */
     public <T> void get(String url, @Nullable HttpHeaders headers, @Nullable HttpParams params,
-        Class<T> clazz, MyCallback<T> callback, @Nullable Object tag) {
+                        Class<T> clazz, MyCallback<T> callback, @Nullable Object tag) {
         asyncRequest(HttpMethod.GET, url, headers, params, clazz, callback, tag);
     }
 
     /**
      * GET请求
      *
-     * @param url 请求url
-     * @param headers 请求头
-     * @param params 请求参数
-     * @param clazz 响应实体类
+     * @param url      请求url
+     * @param headers  请求头
+     * @param params   请求参数
+     * @param clazz    响应实体类
      * @param callback 请求回调
-     * @param <T> 响应实体类型
+     * @param <T>      响应实体类型
      */
     public <T> void get(String url, @Nullable HttpHeaders headers, @Nullable HttpParams params,
-        Class<T> clazz, MyCallback<T> callback) {
+                        Class<T> clazz, MyCallback<T> callback) {
         get(url, headers, params, clazz, callback, null);
     }
 
     /**
      * GET请求
      *
-     * @param url 请求url
-     * @param params 请求参数
-     * @param clazz 响应实体类
+     * @param url      请求url
+     * @param params   请求参数
+     * @param clazz    响应实体类
      * @param callback 请求回调
-     * @param <T> 响应实体类型
+     * @param <T>      响应实体类型
      */
     public <T> void get(String url, @Nullable HttpParams params, Class<T> clazz,
-        MyCallback<T> callback) {
+                        MyCallback<T> callback) {
         get(url, null, params, clazz, callback);
     }
 
@@ -294,15 +294,15 @@ public class OkGoWrapper {
      * 同步请求
      *
      * @param httpMethod 请求方法，如GET、POST等，{@link HttpMethod}
-     * @param url 请求url
-     * @param headers 请求头
-     * @param params 请求参数
-     * @param tag 请求标签，默认为填进去的clazz参数，用以标识当前的请求，方便后续取消对应的请求，
+     * @param url        请求url
+     * @param headers    请求头
+     * @param params     请求参数
+     * @param tag        请求标签，默认为填进去的clazz参数，用以标识当前的请求，方便后续取消对应的请求，
      * @throws IOException
      */
     private Response syncRequest(HttpMethod httpMethod, final String url,
-        @Nullable final HttpHeaders headers, @Nullable final HttpParams params,
-        @Nullable Object tag) throws IOException {
+                                 @Nullable final HttpHeaders headers, @Nullable final HttpParams params,
+                                 @Nullable Object tag) throws IOException {
 
         checkOkGo();
 
@@ -318,18 +318,18 @@ public class OkGoWrapper {
      * 通过rx请求
      *
      * @param httpMethod 请求方法，如GET、POST等，{@link HttpMethod}
-     * @param url 请求url
-     * @param headers 请求头
-     * @param params 请求参数
-     * @param tag 请求标签，默认为填进去的clazz参数，用以标识当前的请求，方便后续取消对应的请求，
-     * @param converter 返回类型转换器
-     * @param <T> 返回类型
+     * @param url        请求url
+     * @param headers    请求头
+     * @param params     请求参数
+     * @param tag        请求标签，默认为填进去的clazz参数，用以标识当前的请求，方便后续取消对应的请求，
+     * @param converter  返回类型转换器
+     * @param <T>        返回类型
      * @return
      */
     public <T> Observable<T> rxRequest(final HttpMethod httpMethod, final String url,
-        @Nullable final HttpHeaders headers, @Nullable final HttpParams params,
-        @androidx.annotation.NonNull final MyConverter<T> converter,
-        @Nullable final Object tag) {
+                                       @Nullable final HttpHeaders headers, @Nullable final HttpParams params,
+                                       @androidx.annotation.NonNull final MyConverter<T> converter,
+                                       @Nullable final Object tag) {
 
         return Observable.create(new ObservableOnSubscribe<T>() {
             @Override
@@ -382,13 +382,13 @@ public class OkGoWrapper {
      * @param httpMethod http请求方法
      * @param url
      * @param params
-     * @param converter 返回类型转换器
-     * @param <T> 返回类型
+     * @param converter  返回类型转换器
+     * @param <T>        返回类型
      * @return
      */
     public <T> Observable<T> rxRequest(final HttpMethod httpMethod, final String url,
-        @Nullable final HttpParams params,
-        @androidx.annotation.NonNull final MyConverter<T> converter, @Nullable Object tag) {
+                                       @Nullable final HttpParams params,
+                                       @androidx.annotation.NonNull final MyConverter<T> converter, @Nullable Object tag) {
 
         return rxRequest(httpMethod, url, null, params, converter, tag);
     }
@@ -403,21 +403,21 @@ public class OkGoWrapper {
         return new ObservableTransformer<T, T>() {
             @Override
             public ObservableSource<T> apply(
-                @io.reactivex.annotations.NonNull Observable<T> upstream) {
+                    @io.reactivex.annotations.NonNull Observable<T> upstream) {
 
                 return upstream.onErrorResumeNext(
-                    new Function<Throwable, ObservableSource<? extends T>>() {
-                        @Override
-                        public ObservableSource<? extends T> apply(@NonNull Throwable throwable)
-                            throws Exception {
-                            if (mErrorInterceptor != null && mErrorInterceptor.interceptException(
-                                throwable)) {
-                                return Observable.empty();
-                            } else {
-                                return Observable.error(throwable);
+                        new Function<Throwable, ObservableSource<? extends T>>() {
+                            @Override
+                            public ObservableSource<? extends T> apply(@NonNull Throwable throwable)
+                                    throws Exception {
+                                if (mErrorInterceptor != null && mErrorInterceptor.interceptException(
+                                        throwable)) {
+                                    return Observable.empty();
+                                } else {
+                                    return Observable.error(throwable);
+                                }
                             }
-                        }
-                    });
+                        });
             }
         };
     }
@@ -425,61 +425,61 @@ public class OkGoWrapper {
     /**
      * rx方式的POST请求
      *
-     * @param url 请求url
-     * @param headers 请求头
-     * @param params 请求参数
-     * @param tag 请求标签，默认为填进去的clazz参数，用以标识当前的请求，方便后续取消对应的请求，
+     * @param url       请求url
+     * @param headers   请求头
+     * @param params    请求参数
+     * @param tag       请求标签，默认为填进去的clazz参数，用以标识当前的请求，方便后续取消对应的请求，
      * @param converter 返回类型转换器
-     * @param <T> 返回类型
+     * @param <T>       返回类型
      * @return
      */
     public <T> Observable<T> rxPost(String url, @Nullable HttpHeaders headers,
-        @Nullable HttpParams params, @androidx.annotation.NonNull MyConverter<T> converter,
-        @Nullable Object tag) {
+                                    @Nullable HttpParams params, @androidx.annotation.NonNull MyConverter<T> converter,
+                                    @Nullable Object tag) {
         return rxRequest(HttpMethod.POST, url, headers, params, converter, tag);
     }
 
     /**
      * rx方式的POST请求
      *
-     * @param url 请求url
-     * @param headers 请求头
-     * @param params 请求参数
+     * @param url       请求url
+     * @param headers   请求头
+     * @param params    请求参数
      * @param converter 返回类型转换器
-     * @param <T> 返回类型
+     * @param <T>       返回类型
      * @return
      */
     public <T> Observable<T> rxPost(String url, @Nullable HttpHeaders headers,
-        @Nullable HttpParams params, @androidx.annotation.NonNull MyConverter<T> converter) {
+                                    @Nullable HttpParams params, @androidx.annotation.NonNull MyConverter<T> converter) {
         return rxPost(url, headers, params, converter, null);
     }
 
     /**
      * rx方式的POST请求
      *
-     * @param url 请求url
-     * @param params 请求参数
+     * @param url       请求url
+     * @param params    请求参数
      * @param converter 返回类型转换器
-     * @param <T> 返回类型
+     * @param <T>       返回类型
      * @return
      */
     public <T> Observable<T> rxPost(String url, @Nullable HttpParams params,
-        @androidx.annotation.NonNull MyConverter<T> converter) {
+                                    @androidx.annotation.NonNull MyConverter<T> converter) {
         return rxPost(url, null, params, converter, null);
     }
 
     /**
      * rx方式的post请求，并做code=1处理
      *
-     * @param url 请求url
+     * @param url     请求url
      * @param headers 请求头
-     * @param params 请求参数
-     * @param clazz 响应实体类
-     * @param <T> 返回类型
+     * @param params  请求参数
+     * @param clazz   响应实体类
+     * @param <T>     返回类型
      * @return
      */
     public <T> Observable<T> rxPostBean01(String url, @Nullable HttpHeaders headers,
-        @Nullable HttpParams params, final Class<T> clazz) {
+                                          @Nullable HttpParams params, final Class<T> clazz) {
 
         return rxPost(url, headers, params, new Bean01Convert<>(clazz));
     }
@@ -487,85 +487,85 @@ public class OkGoWrapper {
     /**
      * rx方式的post请求，并做code=1处理
      *
-     * @param url 请求url
+     * @param url    请求url
      * @param params 请求参数
-     * @param clazz 响应实体类
-     * @param <T> 返回类型
+     * @param clazz  响应实体类
+     * @param <T>    返回类型
      * @return
      */
     public <T> Observable<T> rxPostBean01(String url, @Nullable HttpParams params,
-        final Class<T> clazz) {
+                                          final Class<T> clazz) {
         return rxPostBean01(url, null, params, clazz);
     }
 
     /**
      * rx方式的GET请求
      *
-     * @param url 请求url
-     * @param headers 请求头
-     * @param params 请求参数
-     * @param tag 请求标签，默认为填进去的clazz参数，用以标识当前的请求，方便后续取消对应的请求，
+     * @param url       请求url
+     * @param headers   请求头
+     * @param params    请求参数
+     * @param tag       请求标签，默认为填进去的clazz参数，用以标识当前的请求，方便后续取消对应的请求，
      * @param converter 返回类型转换器
-     * @param <T> 返回类型
+     * @param <T>       返回类型
      * @return
      */
     public <T> Observable<T> rxGet(String url, @Nullable HttpHeaders headers,
-        @Nullable HttpParams params, @androidx.annotation.NonNull MyConverter<T> converter,
-        @Nullable Object tag) {
+                                   @Nullable HttpParams params, @androidx.annotation.NonNull MyConverter<T> converter,
+                                   @Nullable Object tag) {
         return rxRequest(HttpMethod.GET, url, headers, params, converter, tag);
     }
 
     /**
      * rx方式的GET请求
      *
-     * @param url 请求url
-     * @param headers 请求头
-     * @param params 请求参数
+     * @param url       请求url
+     * @param headers   请求头
+     * @param params    请求参数
      * @param converter 返回类型转换器
-     * @param <T> 返回类型
+     * @param <T>       返回类型
      * @return
      */
     public <T> Observable<T> rxGet(String url, @Nullable HttpHeaders headers,
-        @Nullable HttpParams params, @androidx.annotation.NonNull MyConverter<T> converter) {
+                                   @Nullable HttpParams params, @androidx.annotation.NonNull MyConverter<T> converter) {
         return rxGet(url, headers, params, converter, null);
     }
 
     /**
      * rx方式的GET请求
      *
-     * @param url 请求url
-     * @param params 请求参数
+     * @param url       请求url
+     * @param params    请求参数
      * @param converter 返回类型转换器
-     * @param <T> 返回类型
+     * @param <T>       返回类型
      * @return
      */
     public <T> Observable<T> rxGet(String url, @Nullable HttpParams params,
-        @androidx.annotation.NonNull MyConverter<T> converter) {
+                                   @androidx.annotation.NonNull MyConverter<T> converter) {
         return rxGet(url, params, converter);
     }
 
     /**
      * rx方式的GET请求，并做code=1处理
      *
-     * @param url 请求url
+     * @param url     请求url
      * @param headers 请求头
-     * @param params 请求参数
-     * @param clazz 响应实体类
-     * @param <T> 返回类型
+     * @param params  请求参数
+     * @param clazz   响应实体类
+     * @param <T>     返回类型
      * @return
      */
     public <T> Observable<T> rxGetBean01(String url, @Nullable HttpHeaders headers,
-        @Nullable HttpParams params, Class<T> clazz) {
+                                         @Nullable HttpParams params, Class<T> clazz) {
         return rxGet(url, headers, params, new Bean01Convert<>(clazz));
     }
 
     /**
      * rx方式的GET请求，并做code=1处理
      *
-     * @param url 请求url
+     * @param url    请求url
      * @param params 请求参数
-     * @param clazz 响应实体类
-     * @param <T> 返回类型
+     * @param clazz  响应实体类
+     * @param <T>    返回类型
      * @return
      */
     public <T> Observable<T> rxGetBean01(String url, @Nullable HttpParams params, Class<T> clazz) {

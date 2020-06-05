@@ -42,7 +42,7 @@ public class EmptyRecyclerView extends RecyclerView.AdapterDataObserver {
      * @return
      */
     public static EmptyRecyclerView bind(@NonNull RecyclerView recyclerView,
-        @Nullable View emptyView) {
+                                         @Nullable View emptyView) {
         EmptyRecyclerView emptyRecyclerView = new EmptyRecyclerView(recyclerView, emptyView);
         emptyRecyclerView.setAdapter(recyclerView.getAdapter());
         return emptyRecyclerView;

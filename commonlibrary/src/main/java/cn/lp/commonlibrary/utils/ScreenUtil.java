@@ -46,7 +46,7 @@ public class ScreenUtil {
     private static void updateRealSize(Context context) {
 
         WindowManager windowManager =
-            (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+                (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
 
         Display display = windowManager.getDefaultDisplay();
 
@@ -56,7 +56,7 @@ public class ScreenUtil {
                 int height = (Integer) Display.class.getMethod("getRawHeight").invoke(display);
                 sRealSize.set(width, height);
             } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH
-                && Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN_MR1) {
+                    && Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN_MR1) {
 
                 Display.class.getMethod("getRealSize", Point.class).invoke(display, sRealSize);
             } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {

@@ -61,7 +61,7 @@ public class TitleBar extends RelativeLayout {
     }
 
     public TitleBar(@NonNull Context context, @Nullable AttributeSet attrs,
-        @AttrRes int defStyleAttr) {
+                    @AttrRes int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.TitleBar);
@@ -76,7 +76,7 @@ public class TitleBar extends RelativeLayout {
         }
 
         View view = LayoutInflater.from(context)
-            .inflate(R.layout.view_title_bar_fit_status_bar, this, true);
+                .inflate(R.layout.view_title_bar_fit_status_bar, this, true);
 
         mStatusHolderView = (StatusHolderView) view.findViewById(STATUS_HOLDER);
         titleText = (TextView) view.findViewById(TITLE_TEXT);
@@ -128,7 +128,7 @@ public class TitleBar extends RelativeLayout {
         }
 
         boolean showLeftImage =
-            typedArray.getBoolean(R.styleable.TitleBar_showLeftImage, leftDrawableRes != 0);
+                typedArray.getBoolean(R.styleable.TitleBar_showLeftImage, leftDrawableRes != 0);
 
         leftImage.setVisibility(showLeftImage ? VISIBLE : GONE);
 
@@ -140,14 +140,14 @@ public class TitleBar extends RelativeLayout {
         }
 
         boolean showRightImage =
-            typedArray.getBoolean(R.styleable.TitleBar_showRightImage, rightDrawableRes != 0);
+                typedArray.getBoolean(R.styleable.TitleBar_showRightImage, rightDrawableRes != 0);
 
         rightImage.setVisibility(showRightImage ? VISIBLE : GONE);
 
         // 按钮文字大小
         float buttonTextSize = getResources().getDimension(R.dimen.title_button_text_size);
         buttonTextSize =
-            typedArray.getDimension(R.styleable.TitleBar_buttonTextSize, buttonTextSize);
+                typedArray.getDimension(R.styleable.TitleBar_buttonTextSize, buttonTextSize);
 
         // 左侧文字
         int leftTextColor = typedArray.getColor(R.styleable.TitleBar_leftTextColor, textColor);
@@ -158,7 +158,7 @@ public class TitleBar extends RelativeLayout {
         leftText.setText(leftString);
 
         boolean showLeftText = typedArray.getBoolean(R.styleable.TitleBar_showLeftText,
-            !TextUtils.isEmpty(leftString));
+                !TextUtils.isEmpty(leftString));
         leftText.setVisibility(showLeftText ? VISIBLE : GONE);
 
         // 右侧文字
@@ -170,16 +170,16 @@ public class TitleBar extends RelativeLayout {
         String rightString = typedArray.getString(R.styleable.TitleBar_rightText);
         rightText.setText(rightString);
         boolean showRightText = typedArray.getBoolean(R.styleable.TitleBar_showRightText,
-            !TextUtils.isEmpty(rightString));
+                !TextUtils.isEmpty(rightString));
 
         rightText.setVisibility(showRightText ? VISIBLE : GONE);
 
         // 按钮背景
         int buttonBg =
-            typedArray.getResourceId(R.styleable.TitleBar_imageBg, R.drawable.title_bar_button_bg);
+                typedArray.getResourceId(R.styleable.TitleBar_imageBg, R.drawable.title_bar_button_bg);
 
         int textBg =
-            typedArray.getResourceId(R.styleable.TitleBar_textBg, R.drawable.title_bar_text_bg);
+                typedArray.getResourceId(R.styleable.TitleBar_textBg, R.drawable.title_bar_text_bg);
 
         setImageBackground(buttonBg);
         setTextBackground(textBg);
@@ -262,15 +262,15 @@ public class TitleBar extends RelativeLayout {
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
 
         if (mFitStatusBar
-            && Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT
-            && mNewHeightSpec == 0) {
+                && Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT
+                && mNewHeightSpec == 0) {
             try {
                 Resources resources = getResources();
                 int resourceId = resources.getIdentifier("status_bar_height", "dimen", "android");
                 mStatusHeight = resources.getDimensionPixelSize(resourceId);
                 int height = MeasureSpec.getSize(heightMeasureSpec) + mStatusHeight;
                 mNewHeightSpec =
-                    MeasureSpec.makeMeasureSpec(height, MeasureSpec.getMode(heightMeasureSpec));
+                        MeasureSpec.makeMeasureSpec(height, MeasureSpec.getMode(heightMeasureSpec));
             } catch (Resources.NotFoundException e) {
                 //e.printStackTrace();
             }

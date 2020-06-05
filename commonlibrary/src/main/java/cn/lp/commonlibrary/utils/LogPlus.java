@@ -15,7 +15,7 @@ public class LogPlus {
     private static int sCurrentLogLevel = Log.DEBUG;
     private static String sPrefix = null;
 
-    @IntDef({ Log.VERBOSE, Log.DEBUG, Log.INFO, Log.WARN, Log.ERROR })
+    @IntDef({Log.VERBOSE, Log.DEBUG, Log.INFO, Log.WARN, Log.ERROR})
     @Retention(RetentionPolicy.SOURCE)
     public @interface LogLevel {
     }
@@ -23,7 +23,7 @@ public class LogPlus {
     /**
      * 初始化LogPlus，可选
      *
-     * @param prefix Tag前缀，可以防止 RIL，IMS，AT，GSM，STK，CDMA，SMS 开头的log不会被打印
+     * @param prefix   Tag前缀，可以防止 RIL，IMS，AT，GSM，STK，CDMA，SMS 开头的log不会被打印
      * @param logLevel 打log等级
      */
     public static void init(String prefix, @cn.lp.commonlibrary.utils.LogPlus.LogLevel int logLevel) {

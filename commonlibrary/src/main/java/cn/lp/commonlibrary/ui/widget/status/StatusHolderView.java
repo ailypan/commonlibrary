@@ -34,7 +34,7 @@ public class StatusHolderView extends View {
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     public StatusHolderView(Context context, @Nullable AttributeSet attrs, int defStyleAttr,
-        int defStyleRes) {
+                            int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         init(context);
     }
@@ -59,7 +59,7 @@ public class StatusHolderView extends View {
         } else {
             newHeightSpec = MeasureSpec.makeMeasureSpec(0, MeasureSpec.EXACTLY);
         }
-        
+
         super.onMeasure(widthMeasureSpec, newHeightSpec);
     }
 }

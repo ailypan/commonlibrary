@@ -26,7 +26,7 @@ public class DialogUtil {
      * @param matchParentHeight
      */
     public static void adjustDialogLayout(Dialog dialog, boolean matchParentWidth,
-        boolean matchParentHeight) {
+                                          boolean matchParentHeight) {
         Window window = dialog.getWindow();
 
         // 必须调用此方法让DecorView初始化，否则下面的设置布局参数无效
@@ -34,10 +34,10 @@ public class DialogUtil {
         window.getDecorView();
 
         int w = matchParentWidth ? WindowManager.LayoutParams.MATCH_PARENT
-            : WindowManager.LayoutParams.WRAP_CONTENT;
+                : WindowManager.LayoutParams.WRAP_CONTENT;
 
         int h = matchParentHeight ? WindowManager.LayoutParams.MATCH_PARENT
-            : WindowManager.LayoutParams.WRAP_CONTENT;
+                : WindowManager.LayoutParams.WRAP_CONTENT;
 
         window.setLayout(w, h);
     }
@@ -54,7 +54,7 @@ public class DialogUtil {
         adjustDialogLayout(dialog, true, false);
 
         FrameLayout contentParent =
-            (FrameLayout) dialog.getWindow().getDecorView().findViewById(Window.ID_ANDROID_CONTENT);
+                (FrameLayout) dialog.getWindow().getDecorView().findViewById(Window.ID_ANDROID_CONTENT);
 
         View view = dialog.getLayoutInflater().inflate(layoutResID, contentParent, false);
         dialog.setContentView(view, view.getLayoutParams());
@@ -63,8 +63,8 @@ public class DialogUtil {
     }
 
     @IntDef({
-        Gravity.CENTER, Gravity.BOTTOM, Gravity.TOP, Gravity.CENTER_HORIZONTAL,
-        Gravity.CENTER_VERTICAL
+            Gravity.CENTER, Gravity.BOTTOM, Gravity.TOP, Gravity.CENTER_HORIZONTAL,
+            Gravity.CENTER_VERTICAL
     })
     @Retention(RetentionPolicy.SOURCE)
     public @interface DialogGravity {
@@ -88,6 +88,6 @@ public class DialogUtil {
      */
     public static void setAutoShowIme(Dialog dialog) {
         dialog.getWindow()
-            .setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
+                .setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
     }
 }

@@ -28,13 +28,13 @@ public class JsonRequestLogger implements RequestLogger {
 
     @Override
     public void logRequest(String url, HttpHeaders headers, HttpParams params, String response,
-        Throwable tr) {
+                           Throwable tr) {
 
         StringBuilder sb = new StringBuilder();
         sb.append("\n【HTTP】url==>")
-            .append(url)
-            .append("\n【HTTP】request==>")
-            .append(String.valueOf(params));
+                .append(url)
+                .append("\n【HTTP】request==>")
+                .append(String.valueOf(params));
 
         if (tr != null) {
             sb.append("\n【HTTP】throwable==>").append(tr);

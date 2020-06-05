@@ -23,10 +23,10 @@ public class UnicodeUtil {
         for (int i = 0; i < maxLoop; i++) {
             if (unicodeStr.charAt(i) == '\\') {
                 if ((i < maxLoop - 5) && ((unicodeStr.charAt(i + 1) == 'u') || (unicodeStr.charAt(
-                    i + 1) == 'U'))) {
+                        i + 1) == 'U'))) {
                     try {
                         retBuf.append(
-                            (char) Integer.parseInt(unicodeStr.substring(i + 2, i + 6), 16));
+                                (char) Integer.parseInt(unicodeStr.substring(i + 2, i + 6), 16));
                         i += 5;
                     } catch (NumberFormatException localNumberFormatException) {
                         retBuf.append(unicodeStr.charAt(i));

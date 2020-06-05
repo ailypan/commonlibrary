@@ -75,12 +75,12 @@ public class SearchWidget extends LinearLayout {
         if (attrs != null) {
             TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.SearchWidget);
             int ime_options =
-                typedArray.getInt(R.styleable.SearchWidget_android_imeOptions, InputType.TYPE_NULL);
+                    typedArray.getInt(R.styleable.SearchWidget_android_imeOptions, InputType.TYPE_NULL);
             mEtSearch.setImeOptions(ime_options);
             String hint = typedArray.getString(R.styleable.SearchWidget_android_hint);
             String text = typedArray.getString(R.styleable.SearchWidget_android_text);
             int type = typedArray.getInt(R.styleable.SearchWidget_android_inputType,
-                InputType.TYPE_CLASS_TEXT);
+                    InputType.TYPE_CLASS_TEXT);
             mEtSearch.setInputType(type);
             setHint(hint);
             setText(text);

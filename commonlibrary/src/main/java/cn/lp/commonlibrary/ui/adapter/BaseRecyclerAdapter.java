@@ -19,7 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
  */
 
 public abstract class BaseRecyclerAdapter<T>
-    extends RecyclerView.Adapter<BaseRecyclerAdapter.CommonHolder> {
+        extends RecyclerView.Adapter<BaseRecyclerAdapter.CommonHolder> {
 
     private OnItemClickListener mOnItemClickListener;
     private OnItemLongClickListener mOnItemLongClickListener;
@@ -53,7 +53,7 @@ public abstract class BaseRecyclerAdapter<T>
                 public void onClick(View v) {
 
                     mOnItemClickListener.onItemClick(parent, commonHolder,
-                        commonHolder.getAdapterPosition());
+                            commonHolder.getAdapterPosition());
                 }
             });
         }
@@ -63,7 +63,7 @@ public abstract class BaseRecyclerAdapter<T>
                 @Override
                 public boolean onLongClick(View v) {
                     return mOnItemLongClickListener.onItemLongClick(parent, commonHolder,
-                        commonHolder.getAdapterPosition());
+                            commonHolder.getAdapterPosition());
                 }
             });
         }
@@ -80,7 +80,7 @@ public abstract class BaseRecyclerAdapter<T>
      */
     public CommonHolder createCommonHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-            .inflate(getItemLayoutId(viewType), parent, false);
+                .inflate(getItemLayoutId(viewType), parent, false);
         return new CommonHolder(view);
     }
 

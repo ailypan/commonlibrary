@@ -41,7 +41,7 @@ public abstract class OkObserver<T> implements Observer<T> {
      * 失败回调
      *
      * @param message 异常信息
-     * @param tr 异常
+     * @param tr      异常
      */
     public abstract void onFailure(String message, Throwable tr);
 

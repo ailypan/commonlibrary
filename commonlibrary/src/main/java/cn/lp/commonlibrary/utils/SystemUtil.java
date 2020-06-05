@@ -24,17 +24,17 @@ public class SystemUtil {
         LogPlus.i("判断是否为主进程");
 
         ActivityManager activityManager =
-            (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+                (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
 
         String packageName = context.getPackageName();
 
         int myPid = android.os.Process.myPid();
         List<ActivityManager.RunningAppProcessInfo> processInfos =
-            activityManager.getRunningAppProcesses();
+                activityManager.getRunningAppProcesses();
         if (processInfos == null) {
             LogPlus.i("isMainProcess get getRunningAppProcesses null");
             List<ActivityManager.RunningServiceInfo> serviceInfos =
-                activityManager.getRunningServices(Integer.MAX_VALUE);
+                    activityManager.getRunningServices(Integer.MAX_VALUE);
 
             if (serviceInfos == null) {
                 LogPlus.i("isMainProcess get getRunningServices null");
@@ -51,7 +51,7 @@ public class SystemUtil {
                     }
                     serviceInfo = iterator.next();
                 } while (serviceInfo.pid != myPid || !packageName.equals(
-                    serviceInfo.service.getPackageName()));
+                        serviceInfo.service.getPackageName()));
                 return true;
             }
         } else {

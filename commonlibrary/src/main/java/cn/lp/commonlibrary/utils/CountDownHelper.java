@@ -20,9 +20,9 @@ public abstract class CountDownHelper {
     private long mInterval;
 
     /**
-     * @param period 总时间
+     * @param period   总时间
      * @param interval 间隔
-     * @param unit 单位
+     * @param unit     单位
      * @return
      */
     public CountDownHelper(long period, long interval, TimeUnit unit) {
@@ -38,7 +38,7 @@ public abstract class CountDownHelper {
     @NonNull
     private CountDownTimer newCountDownTimer(long millisInFuture, long countDownInterval) {
         return new CountDownTimer(mTimeUnit.toMillis(millisInFuture),
-            mTimeUnit.toMillis(countDownInterval)) {
+                mTimeUnit.toMillis(countDownInterval)) {
             @Override
             public void onTick(long millisUntilFinished) {
                 mUntilFinished = millisUntilFinished;

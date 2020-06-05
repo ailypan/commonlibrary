@@ -30,7 +30,7 @@ public class TopLinearLayout extends LinearLayout {
     }
 
     public TopLinearLayout(@NonNull Context context, @Nullable AttributeSet attrs,
-        @AttrRes int defStyleAttr) {
+                           @AttrRes int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
         setOrientation(VERTICAL);
@@ -48,15 +48,15 @@ public class TopLinearLayout extends LinearLayout {
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
 
         if (mFitStatusBar
-            && Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT
-            && mNewHeightSpec == 0) {
+                && Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT
+                && mNewHeightSpec == 0) {
             try {
                 Resources resources = getResources();
                 int resourceId = resources.getIdentifier("status_bar_height", "dimen", "android");
                 int statusHeight = resources.getDimensionPixelSize(resourceId);
                 int height = MeasureSpec.getSize(heightMeasureSpec) + statusHeight;
                 mNewHeightSpec =
-                    MeasureSpec.makeMeasureSpec(height, MeasureSpec.getMode(heightMeasureSpec));
+                        MeasureSpec.makeMeasureSpec(height, MeasureSpec.getMode(heightMeasureSpec));
             } catch (Resources.NotFoundException e) {
                 //e.printStackTrace();
             }

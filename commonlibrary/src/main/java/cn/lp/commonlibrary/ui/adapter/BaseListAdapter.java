@@ -71,7 +71,7 @@ public abstract class BaseListAdapter<T> extends BaseAdapter {
         } else {
             int viewType = getItemViewType(position);
             convertView = LayoutInflater.from(parent.getContext())
-                .inflate(getItemLayoutId(viewType), parent, false);
+                    .inflate(getItemLayoutId(viewType), parent, false);
             holder = new ListViewHolder(convertView);
             convertView.setTag(holder);
         }

@@ -48,10 +48,10 @@ public abstract class CommonPopupList<T> extends PopupWindow {
      */
     public interface OnSelectItemListener<T> {
         /**
-         * @param popup 弹出列表
-         * @param item 选中那个的数据
-         * @param string 选中那个的字符串
-         * @param position 选中的位置
+         * @param popup        弹出列表
+         * @param item         选中那个的数据
+         * @param string       选中那个的字符串
+         * @param position     选中的位置
          * @param prevPosition 上一个选中的位置
          */
         void onSelectItem(CommonPopupList popup, T item, String string, int position,
@@ -153,12 +153,12 @@ public abstract class CommonPopupList<T> extends PopupWindow {
      * 填充Item
      *
      * @param holder
-     * @param position 填充的位置
-     * @param selected 已选中的那个
+     * @param position      填充的位置
+     * @param selected      已选中的那个
      * @param itemConverter Item格式化器
      */
     public abstract void inflateItem(BaseListAdapter.ListViewHolder holder, T item, int position,
-        int selected, ItemConverter<T> itemConverter);
+                                     int selected, ItemConverter<T> itemConverter);
 
     /**
      * 默认margin为 1个单位
@@ -178,7 +178,7 @@ public abstract class CommonPopupList<T> extends PopupWindow {
     private int getDimen(int dp) {
 
         float pxDimension = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_PX, dp,
-            mContext.getResources().getDisplayMetrics());
+                mContext.getResources().getDisplayMetrics());
         return (int) pxDimension;
     }
 

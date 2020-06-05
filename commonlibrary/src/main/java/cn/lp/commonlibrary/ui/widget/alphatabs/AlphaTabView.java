@@ -55,17 +55,17 @@ public class AlphaTabView extends View {
         super(context, attrs, defStyleAttr);
         mContext = context;
         mTextSize = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, mTextSize,
-            getResources().getDisplayMetrics());
+                getResources().getDisplayMetrics());
 
         //获取所有的自定义属性
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.AlphaTabView);
         BitmapDrawable iconNormal =
-            (BitmapDrawable) a.getDrawable(R.styleable.AlphaTabView_tabIconNormal);
+                (BitmapDrawable) a.getDrawable(R.styleable.AlphaTabView_tabIconNormal);
         if (iconNormal != null) {
             mIconNormal = iconNormal.getBitmap();
         }
         BitmapDrawable iconSelected =
-            (BitmapDrawable) a.getDrawable(R.styleable.AlphaTabView_tabIconSelected);
+                (BitmapDrawable) a.getDrawable(R.styleable.AlphaTabView_tabIconSelected);
         if (iconSelected != null) {
             mIconSelected = iconSelected.getBitmap();
         }
@@ -83,9 +83,9 @@ public class AlphaTabView extends View {
         mTextSize = a.getDimensionPixelSize(R.styleable.AlphaTabView_tabTextSize, mTextSize);
         mTextColorNormal = a.getColor(R.styleable.AlphaTabView_textColorNormal, mTextColorNormal);
         mTextColorSelected =
-            a.getColor(R.styleable.AlphaTabView_textColorSelected, mTextColorSelected);
+                a.getColor(R.styleable.AlphaTabView_textColorSelected, mTextColorSelected);
         mBadgeBackgroundColor =
-            a.getColor(R.styleable.AlphaTabView_badgeBackgroundColor, mBadgeBackgroundColor);
+                a.getColor(R.styleable.AlphaTabView_badgeBackgroundColor, mBadgeBackgroundColor);
         a.recycle();
         initText();
     }
@@ -110,7 +110,7 @@ public class AlphaTabView extends View {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         if (mText == null && (mIconNormal == null || mIconSelected == null)) {
             throw new IllegalArgumentException(
-                "必须设置 tabText 或者 tabIconSelected、tabIconNormal 两个，或者全部设置");
+                    "必须设置 tabText 或者 tabIconSelected、tabIconNormal 两个，或者全部设置");
         }
 
         int paddingLeft = getPaddingLeft();
@@ -127,22 +127,22 @@ public class AlphaTabView extends View {
             availableHeight -= (mTextBound.height() + mPadding);
             //计算出图标可以绘制的画布大小
             mIconAvailableRect.set(paddingLeft, paddingTop, paddingLeft + availableWidth,
-                paddingTop + availableHeight);
+                    paddingTop + availableHeight);
             //计算文字的绘图区域
             int textLeft = paddingLeft + (availableWidth - mTextBound.width()) / 2;
             int textTop = mIconAvailableRect.bottom + mPadding;
             mTextBound.set(textLeft, textTop, textLeft + mTextBound.width(),
-                textTop + mTextBound.height());
+                    textTop + mTextBound.height());
         } else if (mText == null) {
             //计算出图标可以绘制的画布大小
             mIconAvailableRect.set(paddingLeft, paddingTop, paddingLeft + availableWidth,
-                paddingTop + availableHeight);
+                    paddingTop + availableHeight);
         } else if (mIconNormal == null) {
             //计算文字的绘图区域
             int textLeft = paddingLeft + (availableWidth - mTextBound.width()) / 2;
             int textTop = paddingTop + (availableHeight - mTextBound.height()) / 2;
             mTextBound.set(textLeft, textTop, textLeft + mTextBound.width(),
-                textTop + mTextBound.height());
+                    textTop + mTextBound.height());
         }
     }
 
@@ -170,12 +170,12 @@ public class AlphaTabView extends View {
             //由于在该方法中，y轴坐标代表的是baseLine的值，经测试，mTextBound.height() + mFmi.bottom 就是字体的高
             //所以在最后绘制前，修正偏移量，将文字向上修正 mFmi.bottom / 2 即可实现垂直居中
             canvas.drawText(mText, mTextBound.left, mTextBound.bottom - mFmi.bottom / 2,
-                mTextPaint);
+                    mTextPaint);
             //绘制变色文字，setAlpha必须放在paint的属性最后设置，否则不起作用
             mTextPaint.setColor(mTextColorSelected);
             mTextPaint.setAlpha(alpha);
             canvas.drawText(mText, mTextBound.left, mTextBound.bottom - mFmi.bottom / 2,
-                mTextPaint);
+                    mTextPaint);
         }
 
         //绘制角标
@@ -222,7 +222,7 @@ public class AlphaTabView extends View {
             Paint.FontMetrics fontMetrics = numberPaint.getFontMetrics();
             float x = width / 2f;
             float y =
-                hight / 2f - fontMetrics.descent + (fontMetrics.descent - fontMetrics.ascent) / 2;
+                    hight / 2f - fontMetrics.descent + (fontMetrics.descent - fontMetrics.ascent) / 2;
             canvasMessages.drawText(number, x, y, numberPaint);
             float left = getMeasuredWidth() / 10 * 6f;
             float top = dp2px(mContext, 5);

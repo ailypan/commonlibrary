@@ -29,17 +29,17 @@ public class TimeUtil {
     /**
      * 转换linux时间戳
      *
-     * @param year 年
-     * @param month 月，1~12
-     * @param day 日
-     * @param hour 时，0~23
-     * @param minute 分，0~59
-     * @param second 秒，0~59
+     * @param year        年
+     * @param month       月，1~12
+     * @param day         日
+     * @param hour        时，0~23
+     * @param minute      分，0~59
+     * @param second      秒，0~59
      * @param millisecond 毫秒，0~999
      * @return
      */
     public static Calendar getCalendar(int year, int month, int day, int hour, int minute,
-        int second, int millisecond) {
+                                       int second, int millisecond) {
         Calendar calendar = Calendar.getInstance();
         calendar.set(Calendar.YEAR, year);
         calendar.set(Calendar.MONTH, month - 1);
@@ -52,7 +52,7 @@ public class TimeUtil {
     }
 
     public static Calendar getCalendar(int year, int month, int day, int hour, int minute,
-        int second) {
+                                       int second) {
         return getCalendar(year, month, day, hour, minute, second, 0);
     }
 
@@ -117,7 +117,7 @@ public class TimeUtil {
      * @return
      */
     public static String getUnixToTime(String time) {
-        if (time==null|| TextUtils.isEmpty(time)){
+        if (time == null || TextUtils.isEmpty(time)) {
             return "";
         }
         SimpleDateFormat sdr = new SimpleDateFormat("yyyy-MM-dd HH:mm");
@@ -129,7 +129,7 @@ public class TimeUtil {
     }
 
     public static long getUnixTime(int year, int month, int day, int hour, int minute, int second,
-        int millisecond) {
+                                   int millisecond) {
         return getCalendar(year, month, day, hour, minute, second, millisecond).getTimeInMillis();
     }
 
@@ -146,7 +146,7 @@ public class TimeUtil {
     }
 
     public static long getUnixSecond(int year, int month, int day, int hour, int minute,
-        int second) {
+                                     int second) {
         return getCalendar(year, month, day, hour, minute, second, 0).getTimeInMillis() / 1000;
     }
 

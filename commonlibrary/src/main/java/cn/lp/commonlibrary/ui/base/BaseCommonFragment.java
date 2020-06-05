@@ -32,7 +32,7 @@ public abstract class BaseCommonFragment extends RxFragment implements UiView {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
-        @Nullable Bundle savedInstanceState) {
+                             @Nullable Bundle savedInstanceState) {
 
         View view = null;
         if (getLayoutId() != 0) {

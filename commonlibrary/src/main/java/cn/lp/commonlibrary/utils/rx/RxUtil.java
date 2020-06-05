@@ -23,7 +23,7 @@ public class RxUtil {
             @Override
             public ObservableSource<T> apply(@NonNull Observable<T> upstream) {
                 return upstream.subscribeOn(Schedulers.io())
-                    .observeOn(AndroidSchedulers.mainThread());
+                        .observeOn(AndroidSchedulers.mainThread());
             }
         };
     }
@@ -39,7 +39,7 @@ public class RxUtil {
             @Override
             public SingleSource<T> apply(@io.reactivex.annotations.NonNull Single<T> upstream) {
                 return upstream.subscribeOn(Schedulers.io())
-                    .observeOn(AndroidSchedulers.mainThread());
+                        .observeOn(AndroidSchedulers.mainThread());
             }
         };
     }
