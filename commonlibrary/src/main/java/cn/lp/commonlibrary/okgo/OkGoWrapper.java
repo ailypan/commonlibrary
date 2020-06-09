@@ -36,7 +36,7 @@ public class OkGoWrapper {
     private ErrorInterceptor mErrorInterceptor;
     private ErrorTranslator mErrorTranslator;
     private RequestLogger mRequestLogger;
-
+   private String className;
     private OkGoWrapper() {
     }
 
@@ -47,7 +47,9 @@ public class OkGoWrapper {
     public static OkGoWrapper instance() {
         return InstanceHolder.sInstance;
     }
-
+ public void setClassName(String className) {
+        this.className = className;
+    }
     /**
      * 检查是否已经初始化OkGo
      *
