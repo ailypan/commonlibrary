@@ -170,7 +170,7 @@ public class OkGoWrapper {
 
         checkOkGo();
 
-        tag = className == null ? clazz : tag;
+        tag = className == null ? clazz : className;
 
         if (clazz != null) {
             callback.setClass(clazz);
