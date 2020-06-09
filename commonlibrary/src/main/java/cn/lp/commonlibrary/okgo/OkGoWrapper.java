@@ -36,7 +36,7 @@ public class OkGoWrapper {
     private ErrorInterceptor mErrorInterceptor;
     private ErrorTranslator mErrorTranslator;
     private RequestLogger mRequestLogger;
-   private String className;
+    private String className;
     private OkGoWrapper() {
     }
 
@@ -47,7 +47,7 @@ public class OkGoWrapper {
     public static OkGoWrapper instance() {
         return InstanceHolder.sInstance;
     }
- public void setClassName(String className) {
+    public void setClassName(String className) {
         this.className = className;
     }
     /**
@@ -170,7 +170,7 @@ public class OkGoWrapper {
 
         checkOkGo();
 
-        tag = tag == null ? clazz : tag;
+        tag = className == null ? clazz : tag;
 
         if (clazz != null) {
             callback.setClass(clazz);
